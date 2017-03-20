@@ -119,10 +119,10 @@ gulp.task('bowerdir',function(){ //create basic structure index.html page with a
     var options = {
         continueOnError: false, // default = false, true means don't emit error event
         pipeStdout: false, // default = false, true means stdout is written to file.contents
-        bowreDir: '{"directory" : "app/vendor"}',//change bower default folder to vendor
+        bowerDir: '{"directory" : "app/vendor"}',//change bower default folder to vendor
         customTemplatingThing: "test" // content passed to gutil.template()
       };
   return gulp.src('./')
-    .pipe(exec('echo <%= options.bowreDir %> >.bowerrc',options))
+    .pipe(exec('echo <%= options.bowerDir %> >.bowerrc',options))
  
 })
