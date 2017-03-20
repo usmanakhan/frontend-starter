@@ -113,6 +113,16 @@ gulp.task('mkhtm',function(){ //create basic structure index.html page with all 
   return gulp.src('./')
     .pipe(exec('echo <%= options.sampleHtm %> >app\\index.html',options))
  
-    
+   
+})
+gulp.task('bowerdir',function(){ //create basic structure index.html page with all linking
+    var options = {
+        continueOnError: false, // default = false, true means don't emit error event
+        pipeStdout: false, // default = false, true means stdout is written to file.contents
+        bowreDir: '{"directory" : "app/vendor"}',//change bower default folder to vendor
+        customTemplatingThing: "test" // content passed to gutil.template()
+      };
+  return gulp.src('./')
+    .pipe(exec('echo <%= options.bowreDir %> >.bowerrc',options))
  
 })
